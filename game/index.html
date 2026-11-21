@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Views — Spot the Difference</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand">
+      <h1>Twin Views</h1>
+      <p class="tagline">Spot the difference — two pictures, one sharp eye</p>
+    </div>
+    <div class="hud">
+      <div class="hud-box">
+        <span class="hud-label">Level</span>
+        <span id="level-name" class="hud-value">—</span>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Found</span>
+        <span id="found-count" class="hud-value">0 / 0</span>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Left</span>
+        <span id="left-count" class="hud-value">0</span>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Score</span>
+        <span id="score" class="hud-value">0</span>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Hints</span>
+        <span id="hints-left" class="hud-value">3</span>
+      </div>
+    </div>
+  </header>
+
+  <div id="timer-row">
+    <div id="timer-bar"><div id="timer-fill"></div></div>
+    <span id="timer-text">2:00</span>
+  </div>
+
+  <div id="level-tabs" role="tablist" aria-label="Levels"></div>
+
+  <main id="panels">
+    <section class="panel">
+      <div class="panel-label">Scene A</div>
+      <canvas id="canvas-a" width="600" height="430"></canvas>
+    </section>
+    <section class="panel">
+      <div class="panel-label">Scene B <span class="panel-note">— spot what's different</span></div>
+      <canvas id="canvas-b" width="600" height="430"></canvas>
+    </section>
+  </main>
+
+  <div id="dots" aria-label="Differences found"></div>
+
+  <div id="controls">
+    <button id="btn-hint" type="button">💡 Hint <kbd>H</kbd></button>
+    <button id="btn-restart" type="button">↻ Restart <kbd>R</kbd></button>
+    <button id="btn-menu" type="button">☰ Levels <kbd>Esc</kbd></button>
+    <span class="keys-hint">Click a difference on either picture · wrong click −3s</span>
+  </div>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <h2 id="overlay-title"></h2>
+      <p id="overlay-text"></p>
+      <div id="overlay-stars"></div>
+      <button id="overlay-btn" type="button"></button>
+    </div>
+  </div>
+
+  <div id="autotest-result" style="display:none"></div>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
